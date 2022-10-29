@@ -1,0 +1,33 @@
+{
+  "name": "comlink-electron-test",
+  "version": "0.0.1",
+  "description": "Testing and Experimenting harnes for comlink-electron-main and comlink-electron-renderer",
+  "main": "./node_modules/@app/main/index.js",
+  "scripts": {
+    "build": "npm --prefix main run build & npm --prefix preload run build & npm --prefix renderer run build",
+    "run": "npm run build & electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IIIMADDINIII/comlink-electron-test.git"
+  },
+  "author": "Martin Elend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IIIMADDINIII/comlink-electron-test/issues"
+  },
+  "homepage": "https://github.com/IIIMADDINIII/comlink-electron-test#readme",
+  "dependencies": {
+    "@app/main": "file:main",
+    "@app/preload": "file:preload",
+    "@app/renderer": "file:renderer",
+    "electron": "^21.2.0",
+    "rollup": "^3.2.3",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.1.0",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "tslib": "^2.4.0"
+  }
+}

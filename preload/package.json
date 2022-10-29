@@ -1,0 +1,12 @@
+{
+  "name": "@app/preload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
+  },
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs"
+}

@@ -1,0 +1,10 @@
+/node_modules/**/*
+/main/.rollup.cache/**/*
+/main/node_modules/**/*
+/main/index.js
+/preload/.rollup.cache/**/*
+/preload/node_modules/**/*
+/preload/index.js
+/renderer/.rollup.cache/**/*
+/renderer/node_modules/**/*
+/renderer/index.js
