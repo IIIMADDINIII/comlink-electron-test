@@ -1,10 +1,10 @@
 {
   "name": "comlink-electron-test",
   "version": "0.0.1",
-  "description": "Testing and Experimenting harnes for comlink-electron-main and comlink-electron-renderer",
+  "description": "Testing and Experimenting harness for comlink-electron-main and comlink-electron-renderer",
   "main": "./node_modules/@app/main/index.js",
   "scripts": {
-    "build": "npm --prefix main run build & npm --prefix preload run build & npm --prefix renderer run build",
+    "build": "npm --prefix main run build && npm --prefix renderer run build && npm --prefix preload run build",
     "run": "npm run build & electron ."
   },
   "repository": {

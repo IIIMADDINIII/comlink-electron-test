@@ -1,5 +1,5 @@
 import typescript from "@rollup/plugin-typescript";
-import { defineConfig } from "rollup";
+import { defineConfig, InputPluginOption, PluginHooks } from "rollup";
 import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
@@ -10,5 +10,5 @@ export default defineConfig({
     sourcemap: "inline",
   },
   external: ["electron"],
-  plugins: [typescript({ noEmitOnError: true }), terser()],
+  plugins: [typescript({ noEmitOnError: true }), terser(),],
 });
