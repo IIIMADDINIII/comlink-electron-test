@@ -2,9 +2,12 @@
 /main/.rollup.cache/**/*
 /main/node_modules/**/*
 /main/index.js
+/main/tsconfig.tsbuildinfo
 /preload/.rollup.cache/**/*
 /preload/node_modules/**/*
 /preload/index.js
+/preload/tsconfig.tsbuildinfo
 /renderer/.rollup.cache/**/*
 /renderer/node_modules/**/*
 /renderer/index.js
+/renderer/tsconfig.tsbuildinfo

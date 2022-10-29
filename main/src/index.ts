@@ -14,8 +14,9 @@ const createWindow = () => {
 };
 
 app.whenReady().then(() => {
-  let _win1 = createWindow();
-
+  let win1 = createWindow();
+  win1;
+  //tok;
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
