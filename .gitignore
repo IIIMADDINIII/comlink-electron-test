@@ -1,13 +1,16 @@
 /node_modules/**/*
 /main/.rollup.cache/**/*
 /main/node_modules/**/*
+/main/dts/**/*
 /main/index.js
 /main/tsconfig.tsbuildinfo
 /preload/.rollup.cache/**/*
 /preload/node_modules/**/*
+/preload/dts/**/*
 /preload/index.js
 /preload/tsconfig.tsbuildinfo
 /renderer/.rollup.cache/**/*
 /renderer/node_modules/**/*
+/renderer/dts/**/*
 /renderer/index.js
 /renderer/tsconfig.tsbuildinfo
