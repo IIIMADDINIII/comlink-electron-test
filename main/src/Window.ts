@@ -11,8 +11,8 @@ type MessageEvents = {
 export class Window extends (BrowserWindow as new (options?: BrowserWindowConstructorOptions) => (BrowserWindow & TypedEmitter<MessageEvents>)) {
   constructor(module: string, options?: BrowserWindowConstructorOptions) {
     super({ ...options, webPreferences: { preload: require.resolve("@app/preload") }, });
-    this.webContents.ipc.on("message-port", (event, context) => {
-      this.emit("message-port", getEventPort(event), context);
+    this.webContents.ipc.on("message-port", (event, id) => {
+      this.emit("message-port", { port: getEventPort(event), id });
     });
     this.loadFile(require.resolve(module));
   }
