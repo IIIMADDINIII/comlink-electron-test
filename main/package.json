@@ -2,8 +2,8 @@
   "name": "@app/main",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
-  "types": "./dts/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },

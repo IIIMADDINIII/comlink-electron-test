@@ -1,15 +1,15 @@
 import { app, BrowserWindow } from "electron";
+import { Window } from "./Window.js";
 
 const createWindow = () => {
-  const win = new BrowserWindow({
+  const win = new Window("@app/renderer", {
     height: 1000,
     width: 1000,
-    webPreferences: { preload: require.resolve("@app/preload") },
+
   });
-  win.loadFile(require.resolve("@app/renderer"));
+  win.on("message-port", console.log);
+  win.shareMessageChannel("main");
   win.webContents.openDevTools();
-  console.log("started");
-  win.webContents.ipc.on("test", console.log);
   return win;
 };
 

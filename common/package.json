@@ -1,10 +1,20 @@
 {
-  "name": "common",
+  "name": "@app/common",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    },
+    "require": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },
   "author": "",
   "license": "MIT"

@@ -5,11 +5,14 @@ import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
   input: "./src/index.ts",
-  output: {
-    file: "./dist/index.js",
+  output: [{
+    file: "./dist/index.cjs",
     format: "commonjs",
     sourcemap: "inline",
-  },
-  external: ["electron"],
+  }, {
+    file: "./dist/index.mjs",
+    format: "esm",
+    sourcemap: "inline",
+  }],
   plugins: [typescript({ noEmitOnError: true }), nodeResolve(), terser()],
 });
