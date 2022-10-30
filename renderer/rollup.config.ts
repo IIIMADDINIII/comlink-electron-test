@@ -35,10 +35,10 @@ export default defineConfig({
   },
   plugins: [
     allow(["@app/common"]),
-    //ignore(["electron"]),
-    nodeResolve({ resolveOnly: ["electron"] }),
     commonjs(),
-    typescript({ noEmitOnError: true, outputToFilesystem: true, noResolve: true }),
+    typescript({ noEmitOnError: true, outputToFilesystem: true }),
     sourceMaps(),
-    terser()],
+    nodeResolve(),
+    terser(),
+  ],
 });

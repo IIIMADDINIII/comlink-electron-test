@@ -34,5 +34,12 @@ export default defineConfig({
     sourcemap: "inline",
   },
   external: ["electron"],
-  plugins: [allow(["@app/common"]), commonjs(), typescript({ noEmitOnError: true, outputToFilesystem: true }), sourceMaps(), nodeResolve(), terser()],
+  plugins: [
+    allow(["@app/common"]),
+    commonjs(),
+    typescript({ noEmitOnError: true, outputToFilesystem: true }),
+    sourceMaps(),
+    nodeResolve(),
+    terser(),
+  ],
 });

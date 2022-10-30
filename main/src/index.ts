@@ -1,5 +1,8 @@
-import { app, BrowserWindow, MessageChannelMain, MessagePortMain } from "electron";
+import { app, BrowserWindow, MessageChannelMain } from "electron";
 import { Window } from "./Window.js";
+import { expose, wrap } from "comlink-electron-main";
+import sourceMapSupport from "source-map-support";
+sourceMapSupport.install();
 
 const createWindow = () => {
   const win = new Window("@app/renderer", {
@@ -7,14 +10,11 @@ const createWindow = () => {
     width: 1000,
 
   });
-  win.on("message-port", ({ port, id }) => { console.log(port, id); port.on("message", console.log); port.start(); });
-  let port = win.shareMessageChannel("main");
-  let { port1 } = new MessageChannelMain();
-  try {
-    port.postMessage({ test: "maintest", port1 }, [<MessagePortMain><unknown>port1]);
-  } catch (e) {
-    console.log(e);
-  }
+  win.on("message-port", ({ port, id }) => {
+    console.log(port, id);
+    port.on("message", console.log);
+    port.start();
+  });
   win.webContents.openDevTools();
   return win;
 };
@@ -25,6 +25,18 @@ app.whenReady().then(() => {
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
+
+  async function run() {
+    let { port1, port2 } = new MessageChannelMain();
+    let api = {
+      value: 10,
+    };
+    expose(api, port1);
+    let port = wrap<typeof api>(port2);
+    console.log(await port.value);
+  }
+  run().catch(console.log);
+
 });
 
 

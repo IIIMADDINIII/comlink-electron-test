@@ -31,8 +31,15 @@ export default defineConfig({
   output: {
     file: "./dist/index.js",
     format: "commonjs",
-    sourcemap: "inline",
+    sourcemap: true,
   },
-  external: ["electron"],
-  plugins: [allow(["@app/common"]), commonjs(), typescript({ noEmitOnError: true, outputToFilesystem: true }), sourceMaps(), nodeResolve(), terser()],
+  external: ["electron", "path", "fs"],
+  plugins: [
+    allow(["@app/common", "source-map-support", "source-map", "path", "fs", "buffer-from", "comlink-electron-main"]),
+    commonjs(),
+    typescript({ noEmitOnError: true, outputToFilesystem: true }),
+    sourceMaps(),
+    nodeResolve(),
+    terser(),
+  ],
 });

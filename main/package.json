@@ -23,6 +23,7 @@
     "typed-emitter": "^2.1.0"
   },
   "dependencies": {
-    "electron": "^21.2.0"
+    "electron": "^21.2.0",
+    "comlink-electron-main": "file:../comlink-electron-main"
   }
 }
