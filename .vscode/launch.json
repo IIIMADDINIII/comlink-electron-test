@@ -24,7 +24,7 @@
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "runtimeExecutable": "${workspaceFolder}/main/node_modules/.bin/electron",
       "skipFiles": [
         "<node_internals>/**"
       ],

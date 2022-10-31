@@ -1,7 +1,6 @@
 import { defineConfig } from "rollup";
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from "@rollup/plugin-typescript";
-import sourceMaps from "rollup-plugin-sourcemaps";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from "@rollup/plugin-terser";
 
@@ -38,7 +37,6 @@ export default defineConfig({
     allow(["@app/common", "source-map-support", "source-map", "path", "fs", "buffer-from", "comlink-electron-main"]),
     commonjs(),
     typescript({ noEmitOnError: true, outputToFilesystem: true }),
-    sourceMaps(),
     nodeResolve(),
     terser(),
   ],
